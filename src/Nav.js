@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Home from './Home';
+import Macro from './MacroCalculator/components/Macro';
 import {
   BrowserRouter as Router,
   Route,
@@ -37,6 +39,8 @@ class Nav extends Component {
       </div>
     </div>
   </nav>
+  <Route exact path="/" component={Home} />
+            <Route exact path="/macro" component={Macro} />
   </Router>
    
    )}}
