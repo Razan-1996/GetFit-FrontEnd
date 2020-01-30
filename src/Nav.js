@@ -40,7 +40,7 @@ class Nav extends Component {
     </div>
   </nav>
   <Route exact path="/" component={Home} />
-            <Route exact path="/macro" component={Macro} />
+  <Route exact path="/macro" component={Macro} />
   </Router>
    
    )}}

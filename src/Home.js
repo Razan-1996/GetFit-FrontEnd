@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './Home.css'
 
 import Quote from './Quote';
- import Before from './Before';
- import Contactus from './Contactus';
+import Before from './Before';
+import Contactus from './Contactus';
 
 
 class Home extends Component {
@@ -14,7 +14,7 @@ class Home extends Component {
         return (
 
             <div>
-            <header className="masthead">
+            <header className="masthead header">
               <div className="container h-100">
               
                 <div className="row h-100 align-items-center justify-content-center text-center">
