@@ -35,8 +35,10 @@ class Home extends Component {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-8 text-center">
-              <h2 className="text-white mt-0">We've got what you need!</h2>
-              <h2>Macro Calculator</h2>
+            
+          
+              
+              <h2 className="text-white mt-0">MACRO CALCULATOR</h2>
               <hr className="divider light my-4" />
               <p className="text-white-50 mb-4">This macro calculator shows your optimal macronutrients and calories based on your age, height, weight, gender, and activity level. Use your results with macro counting or flexible dieting/IIFYM to lose fat or gain muscle.</p>
               <a className="btn btn-light btn-xl js-scroll-trigger" href="Macro">Get Started!</a>
@@ -77,6 +79,34 @@ class Home extends Component {
                 <i className="fas fa-4x fa-trophy text-primary mb-4" />
                 <h3 className="h4 mb-2">Goal</h3>
                 <p className="text-muted mb-0">If your goal is to lose weight, we guarantee you will achieve this EASILY if you follow your unique plan. You’ll enjoy delicious food as you watch the pounds melt away!</p>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6 text-center">
+              <div className="mt-5">
+                <i className="fas fa-4x fa fa-calculator text-primary mb-4" />
+                <h3 className="h4 mb-2">Get Your Macro</h3>
+                <p className="text-muted mb-0">Step-by-step instructions to calculate your optimal macro ratios to lose fat or build muscle without starving yourself.</p>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6 text-center">
+              <div className="mt-5">
+                <i className="fas fa-4x fa fa-calculator text-primary mb-4" />
+                <h3 className="h4 mb-2">Trak Your Plan</h3>
+                <p className="text-muted mb-0"> </p>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6 text-center">
+              <div className="mt-5">
+                <i className="fas fa-4x fa fa-calculator text-primary mb-4" />
+                <h3 className="h4 mb-2">Get Your Macro</h3>
+                <p className="text-muted mb-0"> </p>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6 text-center">
+              <div className="mt-5">
+                <i className="fas fa-4x fa fa-calculator text-primary mb-4" />
+                <h3 className="h4 mb-2">Get Your Macro</h3>
+                <p className="text-muted mb-0"> </p>
               </div>
             </div>
           </div>
