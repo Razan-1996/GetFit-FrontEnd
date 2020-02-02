@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import './Home.css'
-
+import '../Home.css'
 import Quote from './Quote';
 import Before from './Before';
 import Contactus from './Contactus';
@@ -8,8 +7,6 @@ import Contactus from './Contactus';
 
 class Home extends Component {
 
-
-    
     render() {
         return (
 
@@ -19,12 +16,12 @@ class Home extends Component {
               
                 <div className="row h-100 align-items-center justify-content-center text-center">
                   <div className="col-lg-10 align-self-end">
-                    <h1 className="text-uppercase text-white font-weight-bold">"FITNESS IS NOT ABOUT BETTER THAN SOMEONE ELSE.. 
+                    <h1 className="text-uppercase text-white font-weight-bold">"FITNESS IS NOT ABOUT BEING BETTER THAN SOMEONE ELSE.. 
                     IT'S ABOUT BEING BETTER THAN YOU USED TO BE"</h1>
                     <hr className="divider my-4" />
                   </div>
                   <div className="col-lg-8 align-self-baseline">
-                    <p className="text-white-75 font-weight-light mb-5">Start To Change Your Life With Us ..!</p>
+                    <p className="text-white-75 font-weight-light mb-5">Change Your Life With Us ..!</p>
                     <a className="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
                   </div>
                 </div>
@@ -82,16 +79,10 @@ class Home extends Component {
           </div>
         </div>
       </section>
-      
-
       <Before></Before>
       <Quote></Quote>
       <Contactus></Contactus>
-            
             </div>
-            
-
-            
         );
       }
     };
