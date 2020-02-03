@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import './Home.css'
-
+import '../Home.css'
 import Quote from './Quote';
 import Before from './Before';
 import Contactus from './Contactus';
@@ -8,8 +7,6 @@ import Contactus from './Contactus';
 
 class Home extends Component {
 
-
-    
     render() {
         return (
 
@@ -19,12 +16,12 @@ class Home extends Component {
               
                 <div className="row h-100 align-items-center justify-content-center text-center">
                   <div className="col-lg-10 align-self-end">
-                    <h1 className="text-uppercase text-white font-weight-bold">"FITNESS IS NOT ABOUT BETTER THAN SOMEONE ELSE.. 
+                    <h1 className="text-uppercase text-white font-weight-bold">"FITNESS IS NOT ABOUT BEING BETTER THAN SOMEONE ELSE.. 
                     IT'S ABOUT BEING BETTER THAN YOU USED TO BE"</h1>
                     <hr className="divider my-4" />
                   </div>
                   <div className="col-lg-8 align-self-baseline">
-                    <p className="text-white-75 font-weight-light mb-5">Start To Change Your Life With Us ..!</p>
+                    <p className="text-white-75 font-weight-light mb-5">Change Your Life With Us ..!</p>
                     <a className="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
                   </div>
                 </div>
@@ -41,7 +38,7 @@ class Home extends Component {
               <h2 className="text-white mt-0">MACRO CALCULATOR</h2>
               <hr className="divider light my-4" />
               <p className="text-white-50 mb-4">This macro calculator shows your optimal macronutrients and calories based on your age, height, weight, gender, and activity level. Use your results with macro counting or flexible dieting/IIFYM to lose fat or gain muscle.</p>
-              <a className="btn btn-light btn-xl js-scroll-trigger" href="Macro">Get Started!</a>
+              <a className="btn btn-light btn-xl js-scroll-trigger" href="MacroCalculator">Get Started!</a>
             </div>
           </div>
         </div>
@@ -112,16 +109,10 @@ class Home extends Component {
           </div>
         </div>
       </section>
-      
-
       <Before></Before>
       <Quote></Quote>
       <Contactus></Contactus>
-            
             </div>
-            
-
-            
         );
       }
     };

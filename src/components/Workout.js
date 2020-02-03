@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios' ;
-import WorkoutInfo from './WorkoutInfo';
+import WorkoutInfo from '../WorkoutInfo';
 class Workout extends Component {
   constructor(){
     super()
