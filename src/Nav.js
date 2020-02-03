@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import Home from './Home';
 import Macro from './MacroCalculator/components/Macro';
+import Diet from './Diet';
+import Product from './Product';
+import Workout from './Workout';
+
 import {
   BrowserRouter as Router,
   Route,
@@ -41,6 +45,10 @@ class Nav extends Component {
   </nav>
   <Route exact path="/" component={Home} />
   <Route exact path="/macro" component={Macro} />
+  <Route exact path="/diet" component={Diet} />
+  <Route exact path="/Product" component={Product} />
+  <Route exact path="/workout" component={Workout} />
+
   </Router>
    
    )}}

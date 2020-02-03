@@ -84,29 +84,29 @@ class Home extends Component {
             <div className="col-lg-3 col-md-6 text-center">
               <div className="mt-5">
                 <i className="fas fa-4x fa fa-calculator text-primary mb-4" />
-                <h3 className="h4 mb-2">Get Your Macro</h3>
+                <h3 className="h4 mb-2">Macro calculator</h3>
                 <p className="text-muted mb-0">Step-by-step instructions to calculate your optimal macro ratios to lose fat or build muscle without starving yourself.</p>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 text-center">
               <div className="mt-5">
-                <i className="fas fa-4x fa fa-calculator text-primary mb-4" />
-                <h3 className="h4 mb-2">Trak Your Plan</h3>
+                <i className="fas fa-4x fa fa-ravelry text-primary mb-4" />
+                <h3 className="h4 mb-2">??</h3>
                 <p className="text-muted mb-0"> </p>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 text-center">
               <div className="mt-5">
-                <i className="fas fa-4x fa fa-calculator text-primary mb-4" />
-                <h3 className="h4 mb-2">Get Your Macro</h3>
-                <p className="text-muted mb-0"> </p>
+                <i className="fas fa-4x fa fa-calendar text-primary mb-4" />
+                <h3 className="h4 mb-2">Planner</h3>
+                <p className="text-muted mb-0">You track the times you eat, the foods you eat, portion sizes, and notes about what you were doing or feeling at the time using most of these methods. </p>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 text-center">
               <div className="mt-5">
-                <i className="fas fa-4x fa fa-calculator text-primary mb-4" />
-                <h3 className="h4 mb-2">Get Your Macro</h3>
-                <p className="text-muted mb-0"> </p>
+                <i className="fas fa-4x fa fa-thumbs-up text-primary mb-4" />
+                <h3 className="h4 mb-2">Motivation</h3>
+                <p className="text-muted mb-0">Starting and sticking to a healthy weight loss plan can sometimes seem impossible. </p>
               </div>
             </div>
           </div>
