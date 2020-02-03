@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-
 import Home from './Home';
 import Diet from './Diet';
+import Workout from './Workout';
 import Product from './Product';
 import Macro from '../MacroCalculator/components/Macro';
 import axios from 'axios';
@@ -54,7 +54,7 @@ class Header extends Component {
   const loggedOutLinks = (
    
       <>
-      <Link className="nav-link js-scroll-trigger" to="/signin">SignIn</Link>{" "}
+      <Link className="navbar-brand" to="/signin">SignIn</Link>{" "}
       <Link className="navbar-brand" to="/signup">SignUp</Link>{" "}
       </>
   )
@@ -108,6 +108,7 @@ class Header extends Component {
   <Route exact path="/Diet" component={Diet} />
   <Route exact path="/MacroCalculator" component={Macro} />
   <Route exact path="/Product" component={Product} />
+  <Route exact path="/Workout" component={Workout} />
   <Route exact path="/Myprofile" component={Myprofile} />
   {this.state.isLoggedIn? loggedInRoutes: loggedOutRoutes}
   </Router>

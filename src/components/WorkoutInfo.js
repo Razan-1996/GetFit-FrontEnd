@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import '../App.css';
+import '../Workout.css';
+import {
+  Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, Button
+} from 'reactstrap';
+import Workout from './Workout';
+
 class WorkoutInfo extends Component {
     render() {
         const style = {
@@ -7,15 +13,18 @@ class WorkoutInfo extends Component {
             height: '200px' 
           }
         return (
+          <Card>
                 <div className="WorkoutInfo" >
               <div id="Product12">
-           <img src={this.props.picture} alt=""  style={{style}}  ></img>     
-           <p>{this.props.name}</p>
-           <p>{this.props.description}</p>
-          
-          
+              <CardImg top width="100%" src={this.props.picture} alt=""  style={{style}} />
+                <CardBody>
+                <CardTitle>{this.props.name}</CardTitle>
+                <CardText>{this.props.description}</CardText>
+                </CardBody>
+        
            </div>
             </div>
+            </Card>
         );
     }
 }

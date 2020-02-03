@@ -87,9 +87,9 @@ class Home extends Component {
             </div>
             <div className="col-lg-3 col-md-6 text-center">
               <div className="mt-5">
-                <i className="fas fa-4x fa fa-ravelry text-primary mb-4" />
-                <h3 className="h4 mb-2">??</h3>
-                <p className="text-muted mb-0"> </p>
+                <i className="fas fa-4x fa fa-leaf text-primary mb-4" />
+                <h3 className="h4 mb-2">Meditation</h3>
+                <p className="text-muted mb-0">Learn meditation for stress relief, mindfulness, anxiety & more </p>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 text-center">
