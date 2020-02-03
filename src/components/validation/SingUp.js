@@ -4,7 +4,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify';
 // import Loading from '../addson/Loading'
 
-let base_url = 'https://ifit-ga.herokuapp.com'
+let base_url = 'http://127.0.0.1:3000'
 
 class SingUp extends Component {
     constructor(props) {
