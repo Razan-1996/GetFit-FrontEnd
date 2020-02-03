@@ -4,7 +4,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify';
 // import Loading from '../addson/Loading'
 
-let base_url = 'https://ifit-ga.herokuapp.com/'
+// let base_url = 'http://127.0.0.1:3000'
 
 class SingUp extends Component {
     constructor(props) {
@@ -27,10 +27,13 @@ class SingUp extends Component {
             this.setState(prevState => {return {isActive: !prevState.isActive}})
   
             let user_id = null
-            axios.post(`${base_url}/users/sign_up/`, 
+            axios.post('http://localhost:3000/users/', 
                 {user: {
                         'email': this.state.email,
                         'password': this.state.password,
+                    }},{     headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
                     }}
             )
             .then(r=>{

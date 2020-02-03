@@ -24,15 +24,15 @@ class Header extends Component {
     }
   }
 
-  componentDidMount=()=>{
-    axios.get("https://shielded-mesa-36213.herokuapp.com/api/logged_in", {headers:{ "Authorization": localStorage.getItem("token")}}).then(res => {
-        this.setState({isLoggedIn: res.data})
-    });
-  }
+  // componentDidMount=()=>{
+  //   axios.get("http://localhost:3000/users/sign_in").then(res => {
+  //       this.setState({isLoggedIn: res.data})
+  //   });
+  // }
 
-  loginStatus = (logged_in) =>{
-    this.setState({isLoggedIn: logged_in})
-  }
+  // loginStatus = (logged_in) =>{
+  //   this.setState({isLoggedIn: logged_in})
+  // }
 
   render () {
 
