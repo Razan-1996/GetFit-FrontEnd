@@ -4,7 +4,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify';
 // import Loading from '../addson/Loading'
 
-let base_url = 'https://shielded-mesa-36213.herokuapp.com'
+let base_url = 'https://ifit-ga.herokuapp.com'
 
 class SingUp extends Component {
     constructor(props) {
@@ -26,7 +26,7 @@ class SingUp extends Component {
             this.setState(prevState => {return {isActive: !prevState.isActive}})
   
             let user_id = null
-            axios.post(`${base_url}/api/users/` , 
+            axios.post(`${base_url}/users/sign_up` , 
                 {user: {
                         'email': this.state.email,
                         'password': this.state.password,

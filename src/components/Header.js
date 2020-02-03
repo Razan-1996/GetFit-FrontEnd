@@ -8,6 +8,7 @@ import axios from 'axios';
 import Logout from './validation/Logout';
 import SingUp from './validation/SingUp';
 import SignIn from './validation/SignIn';
+import Myprofile from '../Myprofile';
 
 import {
   BrowserRouter as Router,
@@ -51,8 +52,9 @@ class Header extends Component {
   )
 
   const loggedOutLinks = (
+   
       <>
-      <Link className="navbar-brand" to="/signin">SignIn</Link>{" "}
+      <Link className="nav-link js-scroll-trigger" to="/signin">SignIn</Link>{" "}
       <Link className="navbar-brand" to="/signup">SignUp</Link>{" "}
       </>
   )
@@ -91,8 +93,13 @@ class Header extends Component {
           <li className="nav-item">
         <a className="nav-link js-scroll-trigger"><Link to="/MacroCalculator">Macro Calculator</Link></a>
           </li>
+
+          <li className="nav-item">
+        <a className="nav-link js-scroll-trigger"><Link to="/Myprofile">My profile</Link></a>
+          </li>
           {this.state.isLoggedIn? loggedInLinks : loggedOutLinks }
         </ul>
+        
       </div>
     </div>
   </nav>
@@ -101,6 +108,7 @@ class Header extends Component {
   <Route exact path="/Diet" component={Diet} />
   <Route exact path="/MacroCalculator" component={Macro} />
   <Route exact path="/Product" component={Product} />
+  <Route exact path="/Myprofile" component={Myprofile} />
   {this.state.isLoggedIn? loggedInRoutes: loggedOutRoutes}
   </Router>
    )}}
