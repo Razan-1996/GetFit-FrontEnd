@@ -5,7 +5,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify';
 
 
-let base_url = 'https://shielded-mesa-36213.herokuapp.com'
+let base_url = 'https://ifit-ga.herokuapp.com'
 
 
 export default class SignIn extends React.Component {
@@ -27,11 +27,10 @@ export default class SignIn extends React.Component {
     handleSubmit = () => {
         setTimeout(() => {
             this.setState(prevState => {return {isActive: !prevState.isActive}})
-            axios.post(`${base_url}/api/login` , 
+            axios.post(`${base_url}/users/sign_in` , 
                 {auth: {email: this.state.email, password: this.state.password}}
             )
             .then(r=>{
-                
                 
                 console.log(r);
                 if (r.data.jwt) {

@@ -4,7 +4,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify';
 // import Loading from '../addson/Loading'
 
-let base_url = 'https://shielded-mesa-36213.herokuapp.com'
+let base_url = 'https://ifit-ga.herokuapp.com/'
 
 class SingUp extends Component {
     constructor(props) {
@@ -13,6 +13,7 @@ class SingUp extends Component {
         this.state = {
             email:"",
             password:"",
+            isLoggedIn: false
         }
     }
 
@@ -26,7 +27,7 @@ class SingUp extends Component {
             this.setState(prevState => {return {isActive: !prevState.isActive}})
   
             let user_id = null
-            axios.post(`${base_url}/api/users/` , 
+            axios.post(`${base_url}/users/sign_up/`, 
                 {user: {
                         'email': this.state.email,
                         'password': this.state.password,
@@ -35,6 +36,9 @@ class SingUp extends Component {
             .then(r=>{
                 console.log(r);
                 user_id = r.data.user.id
+                this.setState({
+                    isLoggedIn: true
+                })
                 if (user_id != null) {
                     toast.success("Signed Up successfully", {
                         position: "top-center",
@@ -70,7 +74,7 @@ class SingUp extends Component {
         },2000)
         this.setState(prevState => {return {isActive: !prevState.isActive}})
     }
-    
+
     render(){
         return(
         <div>
@@ -110,7 +114,6 @@ class SingUp extends Component {
                             <Input 
                                 type="password"
                                 name= {'password_conf'}
-                                // value={this.state.password} 
                                 placeholder = {'Enter your password conformation'}
                                 onChange = {e => this.handleChange(e)}
                             />
