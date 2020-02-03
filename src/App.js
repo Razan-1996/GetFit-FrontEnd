@@ -1,7 +1,7 @@
 import React ,{Component} from 'react';
 import './App.css';
-import Nav from './Nav';
-import Footer from './Footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 class App extends Component {
 
@@ -9,13 +9,13 @@ class App extends Component {
 
   return (
     <div>
-          <Nav></Nav>
+    <Header></Header>
+
     <Footer></Footer>
     </div>
 
             
   )}
-        }  
+}  
         
-
 export default App;
