@@ -38,11 +38,7 @@ class DietInfo extends Component {
 <Route exact path="/Dietmore" component={Dietmore} />
 </div>
           </Router>
-          
-               
-           
-       
-                   
+                         
                   </div>
                 </div>
               </div>
