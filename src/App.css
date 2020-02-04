@@ -49,11 +49,17 @@
 
 .custom-circle-image img {
   object-fit: cover;
+  
 }
 
 .card-title {
   letter-spacing: 0.7px;
+  
  
+}
+.name{
+  color:rgb(7, 7, 7);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .card-text {
@@ -64,5 +70,16 @@
 
 .card-img-top {
   width: 20cm;
-  height: 20cm;
+}
+.rounded-circle{
+  width: 350px;
+text-align: center;
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 20px;
+height: 350px;
+}
+.img{
+  height: 30px;
 }
