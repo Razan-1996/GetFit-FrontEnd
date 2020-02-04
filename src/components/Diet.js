@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios' ;
 import DietInfo from './DietInfo' ;
-import Dietmore from './Dietmore';
+
 
         class Diet extends Component {
             constructor(){
