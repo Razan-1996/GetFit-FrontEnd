@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios' ;
 import DietInfo from './DietInfo' ;
+import Dietmore from './Dietmore';
 
         class Diet extends Component {
             constructor(){
@@ -35,16 +36,17 @@ import DietInfo from './DietInfo' ;
             <div className="row">
               <div className="col-lg-12 text-center">
                 <h2 className="section-heading text-uppercase">Diets</h2>
-                <h3 className="section-subheading text-muted">All Diets.</h3>
+               
               </div>
             </div>
             <div className="row container" >
                 {this.state.arr.map((item)=>(
-          <DietInfo name={item.name} picture={item.picture} 
+          <DietInfo name={item.name} 
+          picture={item.picture} 
           description={item.description} 
           ></DietInfo>
                 ))}
-            
+           
             </div>
                     </div>
                     </section>

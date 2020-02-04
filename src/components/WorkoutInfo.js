@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../Workout.css';
+import './Workout.css';
 import {
   Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
+  CardTitle
 } from 'reactstrap';
 import Workout from './Workout';
 
@@ -15,7 +15,7 @@ class WorkoutInfo extends Component {
         return (
           <Card>
                 <div className="WorkoutInfo" >
-              <div id="Product12">
+              <div id="Workout12">
               <CardImg top width="100%" src={this.props.picture} alt=""  style={{style}} />
                 <CardBody>
                 <CardTitle>{this.props.name}</CardTitle>
