@@ -1,10 +1,9 @@
-import React, {Component} from 'react'
-import { Container, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import React, { Component } from 'react';
+import { Container, Button, Form, FormGroup, Label, Input, Col } from 'reactstrap';
 import axios from 'axios'
-// import Loading from '../addson/Loading'
 import { toast } from 'react-toastify';
 
-class Signin extends React.Component {
+class Signup extends React.Component {
     constructor(props){
       super(props);
       this.handleSignup = this.handleSignup.bind(this);
@@ -13,7 +12,7 @@ class Signin extends React.Component {
       e.preventDefault();
       let that = this
       let email = this.props.currentUser
-      axios.post('http://localhost:3000/users/sign_in', {
+      axios.post('http://localhost:3000/users/sign_up', {
         user: {
           email: document.getElementById("email").value,
           password: document.getElementById("password").value,
@@ -43,22 +42,15 @@ class Signin extends React.Component {
       );
     };
   };
-  
 
-// let base_url =  'http://localhost:3000/users/sign_in'
-
-
-// let base_url = 'http://localhost:3000/users/sign_in'
-
-
-// export default class SignIn extends React.Component {
+// class Signup extends Component {
 //     constructor(props) {
 //         super(props)
     
 //         this.state = {
 //             email:"",
 //             password:"",
-//             isActive: false
+//             isLoggedIn: false
 //         }
 //     }
 
@@ -70,24 +62,25 @@ class Signin extends React.Component {
 //     handleSubmit = () => {
 //         setTimeout(() => {
 //             this.setState(prevState => {return {isActive: !prevState.isActive}})
-//             axios.post('http://localhost:3000/users/sign_in' , 
-//                 {auth: {email: this.state.email, password: this.state.password}}
+  
+//             let user_id = null
+//             axios.post('http://localhost:3000/users/sign_up', 
+//                 {user: {
+//                         'email': this.state.email,
+//                         'password': this.state.password,
+//                     }},{     headers: {
+//                         'Content-Type': 'application/json',
+//                         'Accept': 'application/json'
+//                     }}
 //             )
 //             .then(r=>{
-    // handleSubmit = () => {
-    //     setTimeout(() => {
-    //         this.setState(prevState => {return {isActive: !prevState.isActive}})
-    //         axios.post(`${base_url}/users/sign_in` , 
-    //             {auth: {email: this.state.email, password: this.state.password}}
-    //         )
-    //         .then(r=>{
-                
-                
 //                 console.log(r);
-//                 if (r.data.jwt) {
-//                     localStorage.setItem('token', r.data.jwt)
-//                     this.props.loginStatus(true)
-//                     toast.success("Logged In successfully", {
+//                 user_id = r.data.user.id
+//                 this.setState({
+//                     isLoggedIn: true
+//                 })
+//                 if (user_id != null) {
+//                     toast.success("Signed Up successfully", {
 //                         position: "top-center",
 //                         autoClose: 5000,
 //                         hideProgressBar: false,
@@ -95,11 +88,9 @@ class Signin extends React.Component {
 //                         pauseOnHover: false,
 //                         draggable: false,
 //                     });
-//                     // alert.success("Logged In successfully")
-//                     // this.props.history.push('/')
+                   
 //                 }else{
-//                     // alert.show(r.data.message[0])
-//                     toast.warning(r.data.message[0], {
+//                     toast.error("User not created!", {
 //                         position: "top-center",
 //                         autoClose: 5000,
 //                         hideProgressBar: false,
@@ -108,10 +99,10 @@ class Signin extends React.Component {
 //                         draggable: false,
 //                     });
 //                 }
-                
 //             })
 //             .catch(e=>{
-//                 toast.error("Wrong credentials try again!", {
+//                 console.log(e);
+//                 toast.error("Something went wrong try again! Or contact our team", {
 //                     position: "top-center",
 //                     autoClose: 5000,
 //                     hideProgressBar: false,
@@ -119,52 +110,64 @@ class Signin extends React.Component {
 //                     pauseOnHover: false,
 //                     draggable: false,
 //                 });
-//                 // alert.error("try again!")
 //             })
 //         },2000)
 //         this.setState(prevState => {return {isActive: !prevState.isActive}})
 //     }
-    
+
 //     render(){
 //         return(
 //         <div>
-//            {/* <Loading isActive={this.state.isActive}></Loading> */}
-//            <h1 className='page-title'>Sign In</h1>
+//             {/* <Loading isActive={this.state.isActive}></Loading> */}
+//             <h1 className='page-title'>Sign Up</h1>
 //            <Container>
 //                 <Form>
-//                     <FormGroup>
-//                         <Label>
-//                             Username
-//                         </Label>
-//                         <Input 
-//                             name= {'email'}
-//                             value={this.state.email} 
-//                             placeholder = {'Enter your email'}
-//                             onChange = {e => this.handleChange(e)}
-//                         />
-//                     </FormGroup>
-//                     <FormGroup>
-//                         <Label>
-//                             Password
-//                         </Label>
-//                         <Input 
-//                             type="password"
-//                             name= {'password'}
-//                             value={this.state.password} 
-//                             placeholder = {'Enter your password'}
-//                             onChange = {e => this.handleChange(e)}
-//                         />
-//                     </FormGroup>
+//                     <Col>
+//                         <FormGroup>
+//                             <Label>
+//                                 Email
+//                             </Label>
+//                             <Input 
+//                                 name= {'email'}
+//                                 value={this.state.email} 
+//                                 placeholder = {'Enter your email'}
+//                                 onChange = {e => this.handleChange(e)}
+//                             />
+//                         </FormGroup>
+                       
+//                         <FormGroup>
+//                             <Label>
+//                                 Password
+//                             </Label>
+//                             <Input 
+//                                 type="password"
+//                                 name= {'password'}
+//                                 value={this.state.password} 
+//                                 placeholder = {'Enter your password'}
+//                                 onChange = {e => this.handleChange(e)}
+//                             />
+//                         </FormGroup>
+//                         <FormGroup>
+//                             <Label>
+//                                 Password
+//                             </Label>
+//                             <Input 
+//                                 type="password"
+//                                 name= {'password_conf'}
+//                                 placeholder = {'Enter your password conformation'}
+//                                 onChange = {e => this.handleChange(e)}
+//                             />
+//                         </FormGroup>
+//                     </Col>
 //                     <Button 
 //                         onClick= {this.handleSubmit}>    
-//                         Sign In
+//                         Sign Up
 //                     </Button>
 //                 </Form>
 //            </Container>
-           
 //         </div>
 //         )
 //     }
 // }
 
-export default Signin
+export default Signup;
