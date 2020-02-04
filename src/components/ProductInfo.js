@@ -33,7 +33,7 @@ class ProductInfo extends Component {
          <a href="#"><img className="card-img-top" src={this.props.picture} alt="" /></a>
          <div className="card-body">
            <h4 className="card-title">
-             <a href="#">{this.props.name}</a>
+             <h4 className="name">{this.props.name}</h4>
            </h4>
            <div className="card-footer">
            <p className="card-text">Prics: {this.props.price}</p>

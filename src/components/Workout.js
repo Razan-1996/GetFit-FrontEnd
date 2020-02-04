@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios' ;
 import WorkoutInfo from './WorkoutInfo';
+import Addworkout from './Addworkout';
 
 class Workout extends Component {
   constructor(){
@@ -45,7 +46,7 @@ componentDidMount(){
 description={item.description}  
 ></WorkoutInfo>
       ))}
-  
+  <Addworkout></Addworkout>
   </div>
           </div>
           </section>
