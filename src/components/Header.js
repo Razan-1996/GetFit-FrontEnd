@@ -6,7 +6,7 @@ import Product from './Product';
 import Macro from '../MacroCalculator/components/Macro';
 import axios from 'axios';
 import Signup from './validation/Signup';
-import Signin from './validation/SignIn'
+import Signin from './validation/SignIn';
 import Myprofile from '../Myprofile';
 import Edit from './Edit';
 import {
@@ -53,16 +53,16 @@ import {
 
     const loggedInLinks = (
       <>
-      <Link className="navbar-brand" to="/my_profile">My Profile</Link>{" "}
+      <Link className="navbar-brand" to="/myprofile">My Profile</Link>{" "}
       <Link onClick={()=>  this.logout()} className="navbar-brand" to="/">Logout</Link>{" "}
       </>
   )
 
   const loggedInRoutes = (
-      <>
-      <Route path="/" component={Myprofile} />
+     
+      <Route path="/myprofile" component={Myprofile} />
   
-      </>
+      
   )
 
   const loggedOutLinks = (
