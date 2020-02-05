@@ -4,12 +4,14 @@ import {
   Card, CardImg, CardText, CardBody,
   CardTitle
 } from 'reactstrap';
-import Workout from './Workout';
 import Axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 class WorkoutInfo extends Component {
-  deleteWorkout (id) {
+
+  deleteWorkout= (id)=> {
     console.log(id)
+    this.props.filterTheArrayOfWorkout(id)
   Axios.delete(`http://localhost:5000/workout/${id}`)
      }
     render() {
@@ -29,7 +31,8 @@ class WorkoutInfo extends Component {
                 <CardBody>
                 <CardTitle>{this.props.name}</CardTitle>
                 <CardText>{this.props.description}</CardText>
-                <button onClick={()=>this.deleteWorkout(this.props.id)}></button>
+                <button onClick={()=>this.deleteWorkout(this.props.id)}>delete</button>
+                <button style ={{marginLeft : "5px"}} onClick={()=>{ this.props.history.push(`/Workout/edit/${this.props.id}`)}}> edit</button>
                 </CardBody>
         
            </div>
@@ -38,4 +41,4 @@ class WorkoutInfo extends Component {
         );
     }
 }
-export default WorkoutInfo;
+export default withRouter(WorkoutInfo);

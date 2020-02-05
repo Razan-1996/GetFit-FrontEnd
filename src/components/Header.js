@@ -7,9 +7,8 @@ import Macro from '../MacroCalculator/components/Macro';
 import axios from 'axios';
 import Signup from './validation/Signup';
 import Signin from './validation/Signin'
-import Logout from './validation/Logout';
 import Myprofile from '../Myprofile';
-
+import Edit from './Edit';
 import {
   BrowserRouter as Router,
   Route,
@@ -27,7 +26,8 @@ class Header extends Component {
   componentDidMount=()=>{
     axios.get('http://localhost:5000/user/login', {headers:{ "Authorization": localStorage.getItem("token")}})
     .then(res => {
-        this.setState({isLoggedIn: res.data})
+        // this.setState({isLoggedIn: res.data})
+        console.log(res.data);
     });
   }
 
@@ -37,6 +37,7 @@ class Header extends Component {
 
   logout = () =>{
     localStorage.removeItem("token")
+    this.setState({isLoggedIn: false});
     // this.setState({isLoggedIn: false})
     console.log(localStorage.getItem('token'))
     console.log(this.check())
@@ -107,7 +108,7 @@ class Header extends Component {
         <a className="nav-link js-scroll-trigger"><Link to="/MacroCalculator">Macro Calculator</Link></a>
           </li>
 
-          {this.check()? loggedInLinks : loggedOutLinks }
+          {this.state.isLoggedIn ? loggedInLinks : loggedOutLinks }
         </ul>
         
       </div>
@@ -119,6 +120,7 @@ class Header extends Component {
   <Route exact path="/MacroCalculator" component={Macro} />
   <Route exact path="/Product" component={Product} />
   <Route exact path="/Workout" component={Workout} />
+  <Route path="/Workout/edit/:id" render={(props) => <Edit {...props}/>} />
 
   {this.check()? loggedInRoutes: loggedOutRoutes}
   </Router>
