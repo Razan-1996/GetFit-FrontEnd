@@ -6,8 +6,7 @@ import Product from './Product';
 import Macro from '../MacroCalculator/components/Macro';
 import axios from 'axios';
 import Signup from './validation/Signup';
-import Signin from './validation/Signin'
-import Logout from './validation/Logout';
+import Signin from './validation/SignIn'
 import Myprofile from '../Myprofile';
 
 import {
@@ -16,13 +15,13 @@ import {
   Link
 } from 'react-router-dom'; 
 
-class Header extends Component {
-  constructor(props){
-    super(props)
-    this.state={
-      isLoggedIn: false
+  class Header extends Component {
+    constructor(props){
+      super(props)
+      this.state={
+        isLoggedIn: false
+      }
     }
-  }
 
   componentDidMount=()=>{
     axios.get('http://localhost:5000/user/login', {headers:{ "Authorization": localStorage.getItem("token")}})
