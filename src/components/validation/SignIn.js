@@ -34,7 +34,7 @@ class Signin extends React.Component {
                 console.log(r.data.log);
                 if (r.data.log) {
                     localStorage.setItem('token', r.data.token)
-                    this.props.history.push('/Myprofile')
+                    this.props.history.push('/myprofile')
 
                    
                     this.props.loginStatus(true)
