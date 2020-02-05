@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 import './Myprofile.css';
-class Myprofile extends Component {             
+import jwt_decode from 'jwt-decode'
+class Myprofile extends Component { 
+  
+  state ={}
+
+  componentDidMount(){
+    
+    console.log(jwt_decode(localStorage.token))
+
+  }
+  
     render() {
+
         return (
             
                 <div className="container5">
