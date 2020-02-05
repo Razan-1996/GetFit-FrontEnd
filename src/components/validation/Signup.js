@@ -50,6 +50,11 @@ class Signup extends Component {
         this.state = {
             email:"",
             password:"",
+            name: "",
+            height: "",
+            weight: "",
+            gender: "",
+            birthdate: "",
             isLoggedIn: false
         }
     }
@@ -147,6 +152,66 @@ class Signup extends Component {
                                 type="password"
                                 name= {'password_conf'}
                                 placeholder = {'Enter your password conformation'}
+                                onChange = {e => this.handleChange(e)}
+                            />
+                        </FormGroup>
+
+                        <FormGroup>
+                            <Label>
+                                Name
+                            </Label>
+                            <Input 
+                                name= {'email'}
+                                value={this.state.name} 
+                                placeholder = {'Enter your email'}
+                                onChange = {e => this.handleChange(e)}
+                            />
+                        </FormGroup>
+
+                        <FormGroup>
+                            <Label>
+                                Height
+                            </Label>
+                            <Input 
+                                name= {'email'}
+                                value={this.state.height} 
+                                placeholder = {'Enter your email'}
+                                onChange = {e => this.handleChange(e)}
+                            />
+                        </FormGroup>
+
+                        <FormGroup>
+                            <Label>
+                                Weight
+                            </Label>
+                            <Input 
+                                name= {'weight'}
+                                value={this.state.weight} 
+                                placeholder = {'Enter your email'}
+                                onChange = {e => this.handleChange(e)}
+                            />
+                        </FormGroup>
+
+                        <FormGroup>
+                            <Label>
+                                Gender
+                            </Label>
+                            <Input 
+                                name= {'gender'}
+                                value={this.state.gender} 
+                                placeholder = {'Enter your gender'}
+                                onChange = {e => this.handleChange(e)}
+                            />
+                        </FormGroup>
+
+                        <FormGroup>
+                            <Label>
+                                Birthdate
+                            </Label>
+                            <Input 
+                                name= {'birthdate'}
+                                value={this.state.birthdate} 
+                                placeholder = {''}
                                 onChange = {e => this.handleChange(e)}
                             />
                         </FormGroup>

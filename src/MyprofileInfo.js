@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
   import './Myprofile.css';
- 
 class MyprofileInfo extends Component {
     render() {
         const style = {
@@ -9,10 +8,8 @@ class MyprofileInfo extends Component {
           }
         return (
             <div>
-               
                  <div className="container5">
          <div className="row">
-          
            <div className="col-md-7 ">
              <div className="panel panel-default">
                <div className="panel-heading">  <h4>My Profile</h4></div>
@@ -30,10 +27,9 @@ class MyprofileInfo extends Component {
                      </div>
                      <div className="col-sm-6">
                        <h4 style={{color: '#00b1b1'}}></h4>
-                       <span><p>Aspirant</p></span>            
+          
                      </div>
                      <div className="clearfix" />
-                    
                      <div className="bot-border" />
                      <div className="col-sm-5 col-xs-6 tital ">Name:</div><div className="col-sm-7">{this.props.name}</div>
                      <div className="clearfix" />
@@ -64,5 +60,4 @@ class MyprofileInfo extends Component {
         );
     }
 }
-
 export default MyprofileInfo;

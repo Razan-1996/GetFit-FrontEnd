@@ -6,9 +6,9 @@ import Product from './Product';
 import Macro from '../MacroCalculator/components/Macro';
 import axios from 'axios';
 import Signup from './validation/Signup';
-import Signin from './validation/SignIn'
+import Signin from './validation/Signin'
 import Myprofile from '../Myprofile';
-
+import Edit from './Edit';
 import {
   BrowserRouter as Router,
   Route,
@@ -26,12 +26,27 @@ import {
   componentDidMount=()=>{
     axios.get('http://localhost:5000/user/login', {headers:{ "Authorization": localStorage.getItem("token")}})
     .then(res => {
-        this.setState({isLoggedIn: res.data})
+        // this.setState({isLoggedIn: res.data})
+        console.log(res.data);
     });
   }
 
-  loginStatus = (logged_in) =>{
-    this.setState({isLoggedIn: logged_in})
+  loginStatus = () =>{
+    this.setState({isLoggedIn: true})
+  }
+
+  logout = () =>{
+    localStorage.removeItem("token")
+    this.setState({isLoggedIn: false});
+    // this.setState({isLoggedIn: false})
+    console.log(localStorage.getItem('token'))
+    console.log(this.check())
+  }
+
+  check = () => {
+    if (localStorage.getItem('token')) 
+     return true
+     return false 
   }
 
   render () {
@@ -39,13 +54,13 @@ import {
     const loggedInLinks = (
       <>
       <Link className="navbar-brand" to="/my_profile">My Profile</Link>{" "}
-      <Link onClick={()=>  localStorage.removeItem("token")} className="navbar-brand" to="/">Logout</Link>{" "}
+      <Link onClick={()=>  this.logout()} className="navbar-brand" to="/">Logout</Link>{" "}
       </>
   )
 
   const loggedInRoutes = (
       <>
-      <Route path="/my_profile" component={Myprofile} />
+      <Route path="/" component={Myprofile} />
   
       </>
   )
@@ -93,7 +108,7 @@ import {
         <a className="nav-link js-scroll-trigger"><Link to="/MacroCalculator">Macro Calculator</Link></a>
           </li>
 
-          {this.state.isLoggedIn? loggedInLinks : loggedOutLinks }
+          {this.state.isLoggedIn ? loggedInLinks : loggedOutLinks }
         </ul>
         
       </div>
@@ -105,8 +120,9 @@ import {
   <Route exact path="/MacroCalculator" component={Macro} />
   <Route exact path="/Product" component={Product} />
   <Route exact path="/Workout" component={Workout} />
+  <Route path="/Workout/edit/:id" render={(props) => <Edit {...props}/>} />
 
-  {this.state.isLoggedIn? loggedInRoutes: loggedOutRoutes}
+  {this.check()? loggedInRoutes: loggedOutRoutes}
   </Router>
    )}}
 
