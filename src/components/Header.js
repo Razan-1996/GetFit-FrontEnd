@@ -6,7 +6,7 @@ import Product from './Product';
 import Macro from '../MacroCalculator/components/Macro';
 import axios from 'axios';
 import Signup from './validation/Signup';
-import Signin from './validation/Signin'
+import Signin from './validation/SignIn'
 import Myprofile from '../Myprofile';
 import Edit from './Edit';
 import {
