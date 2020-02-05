@@ -31,8 +31,21 @@ class Header extends Component {
     });
   }
 
-  loginStatus = (logged_in) =>{
-    this.setState({isLoggedIn: logged_in})
+  loginStatus = () =>{
+    this.setState({isLoggedIn: true})
+  }
+
+  logout = () =>{
+    localStorage.removeItem("token")
+    // this.setState({isLoggedIn: false})
+    console.log(localStorage.getItem('token'))
+    console.log(this.check())
+  }
+
+  check = () => {
+    if (localStorage.getItem('token')) 
+     return true
+     return false 
   }
 
   render () {
@@ -40,13 +53,13 @@ class Header extends Component {
     const loggedInLinks = (
       <>
       <Link className="navbar-brand" to="/my_profile">My Profile</Link>{" "}
-      <Link onClick={()=>  localStorage.removeItem("token")} className="navbar-brand" to="/">Logout</Link>{" "}
+      <Link onClick={()=>  this.logout()} className="navbar-brand" to="/">Logout</Link>{" "}
       </>
   )
 
   const loggedInRoutes = (
       <>
-      <Route path="/my_profile" component={Myprofile} />
+      <Route path="/" component={Myprofile} />
   
       </>
   )
@@ -94,7 +107,7 @@ class Header extends Component {
         <a className="nav-link js-scroll-trigger"><Link to="/MacroCalculator">Macro Calculator</Link></a>
           </li>
 
-          {this.state.isLoggedIn? loggedInLinks : loggedOutLinks }
+          {this.check()? loggedInLinks : loggedOutLinks }
         </ul>
         
       </div>
@@ -107,7 +120,7 @@ class Header extends Component {
   <Route exact path="/Product" component={Product} />
   <Route exact path="/Workout" component={Workout} />
 
-  {this.state.isLoggedIn? loggedInRoutes: loggedOutRoutes}
+  {this.check()? loggedInRoutes: loggedOutRoutes}
   </Router>
    )}}
 

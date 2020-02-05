@@ -17,12 +17,14 @@ class Workout extends Component {
 }
 
 componentDidMount(){
-  axios.get(`https://cors-anywhere.herokuapp.com/https://ifit-ga.herokuapp.com/workouts.json`)
+  // axios.get(`https://cors-anywhere.herokuapp.com/https://ifit-ga.herokuapp.com/workouts.json`)
+  axios.get('http://localhost:5000/workout/all')
+
    .then(data =>{
    console.log("Ssssss")
-   console.log(data.data)
+   console.log(data)
    this.setState({
-        arr:  data.data
+        arr:  data.data.work
    })
 }) }
 
@@ -41,11 +43,14 @@ componentDidMount(){
     </div>
   </div>
   <div className="row container" >
-      {this.state.arr.map((item)=>(
-<WorkoutInfo name={item.name} picture={item.picture} price={item.price}
+      {this.state.arr.map((item)=>
+<WorkoutInfo name={item.name}
+ picture={item.picture}
+  // price={item.price}
 description={item.description}  
+id={item._id}
 ></WorkoutInfo>
-      ))}
+      )}
   <Addworkout></Addworkout>
   </div>
           </div>
