@@ -15,13 +15,13 @@ import {
   Link
 } from 'react-router-dom'; 
 
-class Header extends Component {
-  constructor(props){
-    super(props)
-    this.state={
-      isLoggedIn: false
+  class Header extends Component {
+    constructor(props){
+      super(props)
+      this.state={
+        isLoggedIn: false
+      }
     }
-  }
 
   componentDidMount=()=>{
     axios.get('http://localhost:5000/user/login', {headers:{ "Authorization": localStorage.getItem("token")}})
