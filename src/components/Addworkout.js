@@ -17,7 +17,6 @@ class Addworkout extends Component {
        
             
         });
-        console.log(this.state.name)
       }
 
 
@@ -40,20 +39,33 @@ class Addworkout extends Component {
       }
 
       handleSubmit = event => {
-        event.preventDefault();
-        const Addworkout = {
-          name: this.state.name ,
-          picture: this.state.picture,
-          description: this.state.description,
+        // console.log(this.state.picture)
+        // console.log(this.state.description)
+        // event.preventDefault();
+        // const Addworkout = {
+        //   name: this.state.name ,
+        //   picture: this.state.picture,
+        //   description: this.state.description,
           
-        };
+        // };
 
-        axios.post('http://localhost:5000/', { Addworkout })
-          .then(res => {
-            console.log(res);
-            console.log(res.data);
-            console.log("lakamv")
-          })
+        // axios.post(`http://localhost:5000/workout/`, { Addworkout })
+        //   .then(res => {
+        //     console.log(res);
+        //     console.log(res.data);
+        //     console.log("lakamv")
+        //   })
+        axios({
+          method: 'post',
+          url: 'http://localhost:5000/workout',
+          headers: {}, 
+          data: {
+            name: this.state.name, // This is the body part
+            description: this.state.description, // This is the body part
+            picture: this.state.picture, // This is the body part
+
+          }
+        });
       }
 
 

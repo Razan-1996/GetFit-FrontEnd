@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import { Container, Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import axios from 'axios'
+import axios from 'axios';
 import { toast } from 'react-toastify';
-import {withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom';
+import './Account.css';
 
 
 class Signin extends React.Component {
