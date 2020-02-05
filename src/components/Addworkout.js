@@ -48,7 +48,7 @@ class Addworkout extends Component {
           
         };
 
-        axios.post(`https://cors-anywhere.herokuapp.com/https://ifit-ga.herokuapp.com//workouts/new.json`, { Addworkout })
+        axios.post('http://localhost:5000/', { Addworkout })
           .then(res => {
             console.log(res);
             console.log(res.data);

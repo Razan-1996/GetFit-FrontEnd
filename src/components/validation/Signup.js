@@ -64,15 +64,7 @@ class Signup extends Component {
             this.setState(prevState => {return {isActive: !prevState.isActive}})
   
             let user_id = null
-            axios.post('http://localhost:3000/users/sign_up', 
-                {user: {
-                        'email': this.state.email,
-                        'password': this.state.password,
-                    }},{     headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    }}
-            )
+            axios.post('http://localhost:5000/user/register',this.state)
             .then(r=>{
                 console.log(r);
                 user_id = r.data.user.id

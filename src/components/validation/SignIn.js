@@ -1,12 +1,8 @@
-
-
 import React, {Component} from 'react'
 import { Container, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import axios from 'axios'
 import { toast } from 'react-toastify';
-
-
-// let base_url = 'https://shielded-mesa-36213.herokuapp.com'
+import {withRouter} from 'react-router-dom'
 
 
 class Signin extends React.Component {
@@ -28,16 +24,20 @@ class Signin extends React.Component {
     handleSubmit = () => {
         setTimeout(() => {
             this.setState(prevState => {return {isActive: !prevState.isActive}})
-            axios.post('http://localhost:3000/users/sign_in' , 
-                {auth: {email: this.state.email, password: this.state.password}}
+            axios.post('http://localhost:5000/user/login' , 
+               { email: this.state.email, password: this.state.password}
             )
             .then(r=>{
+               
                 
-                
-                console.log(r);
-                if (r.data.jwt) {
-                    localStorage.setItem('token', r.data.jwt)
+                console.log(r.data.log);
+                if (r.data.log) {
+                    localStorage.setItem('token', r.data.token)
+                    this.props.history.push('/Myprofile')
+
+                   
                     this.props.loginStatus(true)
+
                     toast.success("Logged In successfully", {
                         position: "top-center",
                         autoClose: 5000,
@@ -46,10 +46,9 @@ class Signin extends React.Component {
                         pauseOnHover: false,
                         draggable: false,
                     });
-                    // alert.success("Logged In successfully")
-                    // this.props.history.push('/')
+
                 }else{
-                    // alert.show(r.data.message[0])
+
                     toast.warning(r.data.message[0], {
                         position: "top-center",
                         autoClose: 5000,
@@ -119,7 +118,7 @@ class Signin extends React.Component {
     }
 }
 
-export default Signin;
+export default withRouter(Signin);
 
 
 
