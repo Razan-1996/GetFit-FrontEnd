@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Myprofile.css';
 import axios from 'axios' ;
-import WorkoutInfo from './MyprofiletInfo';
+import MyprofileInfo from './MyprofileInfo';
 import jwt from 'jwt-decode'
 class Myprofile extends Component { 
   constructor(){

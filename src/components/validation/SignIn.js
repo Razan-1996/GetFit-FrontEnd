@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Container, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import axios from 'axios'
+import './Acount.css';
 import { toast } from 'react-toastify';
 import {withRouter} from 'react-router-dom'
 
