@@ -3,46 +3,6 @@ import { Container, Button, Form, FormGroup, Label, Input, Col } from 'reactstra
 import axios from 'axios'
 import { toast } from 'react-toastify';
 
-// class Signup extends React.Component {
-//     constructor(props){
-//       super(props);
-//       this.handleSignup = this.handleSignup.bind(this);
-//     }
-//   handleSignup(e) {
-//       e.preventDefault();
-//       let that = this
-//       let email = this.props.currentUser
-//       axios.post('http://localhost:3000/users/sign_up', {
-//         user: {
-//           email: document.getElementById("email").value,
-//           password: document.getElementById("password").value,
-//           password_confirmation: document.getElementById("password_confirmation").value
-//         }
-//       })
-//       .then(function(response){
-//         that.props.changePage("delete");
-//         that.props.updateCurrentUser(email);
-//       })
-//       .catch(function(error){
-//         console.log(error)
-//       })
-//   }
-//   render() {
-//     return (
-//         <div>
-//           <h2>Signup</h2>
-//           <form>
-//             <input id="email" placeholder="email"/>
-//             <input id="password" placeholder="password"/>
-//             <input id="password_confirmation" placeholder="retype password"/>
-//             <button onClick={this.handleSignup}>Submit</button>
-//           </form>
-//           <button onClick={() => this.props.changePage("login")}>Back to Login</button>
-//         </div>
-//       );
-//     };
-//   };
-
 class Signup extends Component {
     constructor(props) {
         super(props)
@@ -112,6 +72,7 @@ class Signup extends Component {
         this.setState(prevState => {return {isActive: !prevState.isActive}})
     }
 
+
     render(){
         return(
         <div>
@@ -146,7 +107,7 @@ class Signup extends Component {
                         </FormGroup>
                         <FormGroup>
                             <Label>
-                                Password
+                                Password conformation
                             </Label>
                             <Input 
                                 type="password"
@@ -161,9 +122,9 @@ class Signup extends Component {
                                 Name
                             </Label>
                             <Input 
-                                name= {'email'}
+                                name= {'name'}
                                 value={this.state.name} 
-                                placeholder = {'Enter your email'}
+                                placeholder = {'Enter your name'}
                                 onChange = {e => this.handleChange(e)}
                             />
                         </FormGroup>
@@ -173,9 +134,9 @@ class Signup extends Component {
                                 Height
                             </Label>
                             <Input 
-                                name= {'email'}
+                                name= {'height'}
                                 value={this.state.height} 
-                                placeholder = {'Enter your email'}
+                                placeholder = {'Enter your height'}
                                 onChange = {e => this.handleChange(e)}
                             />
                         </FormGroup>
@@ -187,7 +148,7 @@ class Signup extends Component {
                             <Input 
                                 name= {'weight'}
                                 value={this.state.weight} 
-                                placeholder = {'Enter your email'}
+                                placeholder = {'Enter your weight'}
                                 onChange = {e => this.handleChange(e)}
                             />
                         </FormGroup>
@@ -211,7 +172,7 @@ class Signup extends Component {
                             <Input 
                                 name= {'birthdate'}
                                 value={this.state.birthdate} 
-                                placeholder = {''}
+                                placeholder = {'Enter your birthdate'}
                                 onChange = {e => this.handleChange(e)}
                             />
                         </FormGroup>

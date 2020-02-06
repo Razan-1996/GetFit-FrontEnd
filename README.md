@@ -16,16 +16,22 @@ Best place for men and women aiming to loose weight, gain muscles, and get fit i
 
 ## Wireframe
 HOME
+
 ![image](Home2.jpg)
 WORKOUT
+
 ![image](work.jpg)
 DIET
+
 ![image](di.jpg)
 PRODUCT
+
 ![image](pro.jpg)
 USER
+
 ![image](sig.jpg)
 MACRO CALCULATER
+
 ![image](mc.jpg)
 
 ## Website Screenshots

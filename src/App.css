@@ -72,15 +72,33 @@
   width: 20cm;
 }
 .rounded-circle{
-  width: 350px;
+width: 90%;
 text-align: center;
 display: block;
 margin-left: auto;
 margin-right: auto;
 margin-bottom: 20px;
-height: 350px;
+height: 255px;
+border: 2px solid #f4623a;
 }
 .img{
   height: 30px;
 }
+#mainNav {
+  box-shadow: 1px;
+  background-color: rgba(0,0,0,0.5);
+}
+.card-body {
+  text-align: center;
+}
 
+#infobtn{
+  color: #fff;
+    background-color: #f4623a !important;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10rem;
+    margin-top: 15px;
+}
