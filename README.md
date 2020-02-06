@@ -78,3 +78,9 @@ MACRO CALCULATER
 - README file that explain the app features
 - Presentation
 - GitHup Deploy Link
+- FrontEnd 
+https://github.com/Razan-1996/GetFit-FrontEnd
+- BackEnd
+Express:
+https://github.com/hatimalattas/GetFit_Backend
+Rails:
