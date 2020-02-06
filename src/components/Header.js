@@ -14,6 +14,7 @@ import {
   Route,
   Link
 } from 'react-router-dom'; 
+import Goal from './Goal';
 
   class Header extends Component {
     constructor(props){
@@ -104,6 +105,11 @@ import {
           <li className="nav-item">
         <a className="nav-link js-scroll-trigger"><Link to="/Product">Product</Link></a>
           </li>
+          
+{/* 
+          <li className="nav-item">
+        <a className="nav-link js-scroll-trigger"><Link to="/Goal">Goal</Link></a>
+          </li> */}
 
           {/* <li className="nav-item">
         <a className="nav-link js-scroll-trigger"><Link to="/Workout">Workout</Link></a>
@@ -124,6 +130,7 @@ import {
   <Route exact path="/Diet" component={Diet} />
   <Route exact path="/MacroCalculator" component={Macro} />
   <Route exact path="/Product" component={Product} />
+  {/* <Route exact path="/Goal" component={Goal} /> */}
   <Route path="/Workout/edit/:id" render={(props) => <Edit {...props}/>} />
 
   {this.state.isLoggedIn ? loggedInRoutes: loggedOutRoutes}
