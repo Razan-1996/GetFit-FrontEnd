@@ -29,25 +29,12 @@ class Signin extends React.Component {
                { email: this.state.email, password: this.state.password}
             )
             .then(r=>{
-               
-                
-                console.log(r.data.log);
+   
                 if (r.data.log) {
                     localStorage.setItem('token', r.data.token)
                     this.props.history.push('/myprofile')
-
-                   
                     this.props.loginStatus(true)
-
-                    toast.success("Logged In successfully", {
-                        position: "top-center",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: false,
-                        pauseOnHover: false,
-                        draggable: false,
-                    });
-
+                    
                 }else{
 
                     toast.warning(r.data.message[0], {

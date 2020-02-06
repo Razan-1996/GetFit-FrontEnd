@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
 
-
-
-
 class DietInfo extends Component {
   state={
     info:"",
@@ -27,17 +24,13 @@ class DietInfo extends Component {
               <div className="col-sm-4 card-wrapper">
                 <div className="card card-style">
                   <img className="card-img-top rounded-circle img" src={this.props.picture} alt="Card image" class="rounded-circle" />
-                
-                  
-                   
-
-                  
+              
                 <div className="card-body">
         <div>
-          <h3>{this.props.name}</h3>
+          <h5>{this.props.name}</h5>
           </div> 
     
-          <button onClick={() => this.showInfo()}> more info</button>
+          <button id="infobtn" onClick={() => this.showInfo()}> more info</button>
           
           
 <p>

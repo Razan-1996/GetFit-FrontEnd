@@ -11,8 +11,6 @@ class Workout extends Component {
       picture: "",
       name: "",
       description: "",
-
-
     }
   }
 
