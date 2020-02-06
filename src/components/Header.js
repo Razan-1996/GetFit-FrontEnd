@@ -53,14 +53,19 @@ import {
 
     const loggedInLinks = (
       <>
+                <li className="nav-item">
+        <a className="nav-link js-scroll-trigger"><Link to="/Workout">Workout</Link></a>
+          </li>
       <Link className="navbar-brand" to="/myprofile">My Profile</Link>{" "}
       <Link onClick={()=>  this.logout()} className="navbar-brand" to="/">Logout</Link>{" "}
       </>
   )
 
   const loggedInRoutes = (
-     
+     <>
       <Route path="/myprofile" component={Myprofile} />
+      <Route exact path="/Workout" component={Workout} />
+      </>
   
       
   )
@@ -100,9 +105,9 @@ import {
         <a className="nav-link js-scroll-trigger"><Link to="/Product">Product</Link></a>
           </li>
 
-          <li className="nav-item">
+          {/* <li className="nav-item">
         <a className="nav-link js-scroll-trigger"><Link to="/Workout">Workout</Link></a>
-          </li>
+          </li> */}
 
           <li className="nav-item">
         <a className="nav-link js-scroll-trigger"><Link to="/MacroCalculator">Macro Calculator</Link></a>
@@ -119,10 +124,9 @@ import {
   <Route exact path="/Diet" component={Diet} />
   <Route exact path="/MacroCalculator" component={Macro} />
   <Route exact path="/Product" component={Product} />
-  <Route exact path="/Workout" component={Workout} />
   <Route path="/Workout/edit/:id" render={(props) => <Edit {...props}/>} />
 
-  {this.check()? loggedInRoutes: loggedOutRoutes}
+  {this.state.isLoggedIn ? loggedInRoutes: loggedOutRoutes}
   </Router>
    )}}
 
